@@ -35,6 +35,7 @@ footer {
   background: #2b4aa5;
   padding: 15px 0;
   text-align: center;
+  position: static;
   font-family: 'Poppins', sans-serif;
 }
 footer .text span {
@@ -43,7 +44,7 @@ footer .text span {
   color: #fff;
 }
 footer .text span a {
-  font-weight: 500;
+  font-weight: 400;
   color: #fff;
 }
 footer .text span a:hover {

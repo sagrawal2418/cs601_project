@@ -7,13 +7,23 @@ export default {
   components: { SidebarLink },
   setup() {
     return { collapsed, toggleSidebar, sidebarWidth }
+  },
+   watch: {
+    '$route' () {
+      this.collapsed = true
+    }
+  },
+  methods:{
+   goToHome(){
+   this.$router.push('/'); 
+      }
   }
 }
 </script>
 
 <template>
   <div class="sidebar" :style="{ width: sidebarWidth }">
-    <h1 class="sidebar_name">
+    <h1 class="sidebar_name" @click="goToHome()">
       <span v-if="collapsed">
         <div>S</div>
         <div>A</div>
@@ -21,17 +31,16 @@ export default {
     </h1>
 
     <SidebarLink to="/" icon="fas fa-home">Home</SidebarLink>
-    <SidebarLink to="/projects" icon="fas fa-columns">Projects</SidebarLink>
-    <SidebarLink to="/experience" icon="fas fa-chart-bar">
+    <SidebarLink to="/projects" icon="fas fa-project-diagram">Projects</SidebarLink>
+    <SidebarLink to="/experience" icon="fas fa-briefcase">
       Experience
     </SidebarLink>
-    <SidebarLink to="/contact" icon="fas fa-users">Contact</SidebarLink>
+    <SidebarLink to="/contact" icon="fas fa-id-card">Contact</SidebarLink>
 
     <span
       class="collapse-icon"
       :class="{ 'rotate-180': collapsed }"
-      @click="toggleSidebar"
-    >
+      @click="toggleSidebar">
       <i class="fas fa-angle-double-left" />
     </span>
   </div>
@@ -49,7 +58,6 @@ export default {
 .sidebar {
   color: white;
   background-color: var(--sidebar-bg-color);
-
   float: left;
   position: fixed;
   z-index: 1;
@@ -57,9 +65,7 @@ export default {
   left: 0;
   bottom: 0;
   padding: 0.5em;
-
   transition: 0.3s ease;
-
   display: flex;
   flex-direction: column;
 }
@@ -72,9 +78,7 @@ export default {
   position: absolute;
   bottom: 0;
   padding: 0.75em;
-
   color: rgba(255, 255, 255, 0.7);
-
   transition: 0.2s linear;
 }
 
@@ -85,5 +89,7 @@ export default {
 
 .sidebar_name{
   margin-bottom: 20px;
+  cursor: pointer;
+
 }
 </style>

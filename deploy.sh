@@ -1,10 +1,9 @@
-#!/usr/bin/env sh
-
-# abort on errors
-set -e
-
 # build
 npm run build
+
+# save the latest commit hash as a string
+LOGSTRING=$(git log)
+COMMIT=$(echo $LOGSTRING | awk '{print $2}')
 
 # navigate into the build output directory
 cd dist
@@ -14,8 +13,13 @@ cd dist
 
 git init
 git add -A
-git commit -m 'deploy'
+git commit -m "deploy (commit: $COMMIT)"
 
-git push -f git@github.com:sagrawal2418/cs601_project.git main:gh-pages
+# if you are using SSH key authentication
+# git push -f git@github.com:<USER-NAME>/<REPO>.git master:gh-pages
 
-cd -
+# if you are using HTTPS/2FA authentication
+# git push -f https://github.com/<USER-NAME>/<REPO>.git master:gh-pages
+git push -f https://github.com/sagrawal2418/cs601_project.git master:gh-pages
+
+cd ..
