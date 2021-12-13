@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+:root {
+  --size_20px: 20px;
+  --size_0px: 0px;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+/* header */
+
+.header {
+  box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.1);
+  position: relative;
+  width: 100%;
+  left: var(--size_0px);
+  right: var(--size_0px);
+  top: var(--size_0px);
+  background-color: #34495e;
+}
+
+.header ul {
+  margin: var(--size_0px);
+  padding: var(--size_0px);
+  list-style: none;
+  overflow: hidden;
+  background-color: #34495e;
+}
+
+.header li a {
+  display: block;
+  padding: 10px var(--size_20px);
+  border-right: 1px solid white;
+  text-decoration: none;
+  color: white;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+  background-color: white;
+  color: black;
+}
+
+/* menu */
+
+.header .menu {
+  clear: both;
+  max-height: var(--size_0px);
+  transition: max-height 0.2s ease-out;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  float: right;
+  padding: 28px var(--size_20px);
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: white;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background 0.2s ease-out;
+  width: 18px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: white;
+  content: "";
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+
+.header .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  max-height: 240px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: var(--size_20px) 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+.home_page_name {
+  font-size: 50px;
+  font-family: "Poppins", sans-serif;
+}
+
+.home_page_title {
+  font-size: 30px;
+  font-style: italic;
+  font-family: "Poppins", sans-serif;
+  margin-top: -40px;
+}
+
+.profile_pic {
+  border-radius: 50%;
+  height: 200px;
+  width: 200px;
+  margin: var(--size_20px);
+}
+
+table,
+td,
+th {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: var(--size_20px);
+}
+
+.footer {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  width: 100%;
+  text-align: right;
+}
+
+.card {
+  /* Add shadows to create the "card" effect */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  flex-wrap: nowrap;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: var(--size_20px) 30px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media (max-width: 600px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    text-align: center;
+  }
+
+  .profile_pic {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .projects-contents {
+    padding-top: 50px;
+  }
+
+  .projects {
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  p {
+    text-align: left;
+  }
+}
