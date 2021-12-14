@@ -3,7 +3,7 @@
         <section class="left-section">
             <div class="left-section-contents">
                 <div class="profile">
-                    <img class="profile_pic" src="images/profile-pic.png"/>
+                    <img class="profile_pic" src="images/profile-pic.png" alt="Profile"/>
                     <p class="name">{{ name }}</p>
                     <p class="profession">{{ profession }}</p>
                     <p class="resume_content">

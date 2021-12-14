@@ -6,18 +6,18 @@
         <h3 class="title">{{ title }}</h3>
         <div class="info">
           <div class="information">
-            <img src="images/location.png" class="icon" alt="" />
+            <img src="images/location.png" class="icon" alt="Location" />
             <p>{{ contactInfo.address }}</p>
           </div>
 
           <div class="information">
-            <img src="images/email.png" class="icon" alt="" />
+            <img src="images/email.png" class="icon" alt="Email" />
             <a href="mailto:sandeepagrawal2418@gmail.com">
               {{ contactInfo.email }}
             </a>
           </div>
           <div class="information">
-            <img src="images//phone.png" class="icon" alt="" />
+            <img src="images//phone.png" class="icon" alt="Information" />
             <a href="tel:2403942418">{{ contactInfo.phone }}</a>
           </div>
         </div>
@@ -49,7 +49,6 @@
               type="text"
               name="name"
               class="input"
-              oninvalid="this.setCustomValidity('Name cannot be empty')"
               autofocus
               required
               minlength="1"
@@ -63,7 +62,6 @@
               name="email"
               class="input"
               required
-              oninvalid="this.setCustomValidity('Please enter email in correct format')"
               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
             />
             <label for="">Email</label>
@@ -75,7 +73,6 @@
               name="phone"
               class="input"
               required
-              oninvalid="this.setCustomValidity('Please enter phone number in correct format')"
               pattern="[2-9]{1}[0-9]{9}"
             />
             <label for="">Phone</label>

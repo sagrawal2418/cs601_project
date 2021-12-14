@@ -24,6 +24,7 @@ export default {
   setup() {
     return { sidebarWidth }
   }
+   
 }
 </script>
 
@@ -33,9 +34,10 @@ export default {
 /* Footer CSS */
 footer {
   background: #2b4aa5;
-  padding: 15px 0;
   text-align: center;
-  position: static;
+  width: auto;
+  margin-left: 20px;
+  position: relative;
   font-family: 'Poppins', sans-serif;
 }
 footer .text span {

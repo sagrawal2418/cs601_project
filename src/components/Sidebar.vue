@@ -22,7 +22,7 @@ export default {
 </script>
 
 <template>
-  <div class="sidebar" :style="{ width: sidebarWidth }">
+  <aside class="sidebar" :style="{ width: sidebarWidth }">
     <h1 class="sidebar_name" @click="goToHome()">
       <span v-if="collapsed">
         <div>S</div>
@@ -43,7 +43,7 @@ export default {
       @click="toggleSidebar">
       <i class="fas fa-angle-double-left" />
     </span>
-  </div>
+  </aside>
 </template>
 
 <style>
@@ -88,7 +88,7 @@ export default {
 }
 
 .sidebar_name{
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   cursor: pointer;
 
 }

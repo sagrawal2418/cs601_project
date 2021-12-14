@@ -22,14 +22,12 @@
     </figure>
     <p><b>{{ project_three.project_name }}</b></p>
     <p>{{ project_three.project_desc }}</p>
-
-    <p>
-      <a
+    <p><a
         v-bind:href="project_three.project_link"
         class="btn btn--accent"
         target="_blank"
         >Read more</a
-      >
+>
     </p>
   </section>
 
@@ -88,17 +86,16 @@ export default {
   margin: 20px;
 }
 
+p{
+  text-align: center;
+}
+
 .card {
   /* Add shadows to create the "card" effect */
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
   display: inline-block;
   flex-wrap: wrap;
-}
-
-.card img {
-  height: 150px;
-  width: 150px;
 }
 
 /* On mouse-over, add a deeper shadow */
@@ -108,7 +105,7 @@ export default {
 
 .projects {
   border-radius: 50%;
-  display: block;
+  display: flex;
   margin-left: auto;
   margin-right: auto;
 }
